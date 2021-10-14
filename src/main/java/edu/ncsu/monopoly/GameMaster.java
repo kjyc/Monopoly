@@ -12,7 +12,7 @@ public class GameMaster {
 	private GameBoard gameBoard;
 	private MonopolyGUI gui;
 	private int initAmountOfMoney;
-	private ArrayList players = new ArrayList();
+	private ArrayList<Player> players = new ArrayList<Player>();
 	private int turn = 0;
 	private int utilDiceRoll;
 	private boolean testMode;
@@ -123,7 +123,7 @@ public class GameMaster {
 
     public void completeTrade(TradeDeal deal) {
         Player seller = getPlayer(deal.getPlayerIndex());
-        Cell property = gameBoard.queryCell(deal.getPropertyName());
+        IOwnable property = gameBoard.queryCell(deal.getPropertyName());
         seller.sellProperty(property, deal.getAmount());
         getCurrentPlayer().buyProperty(property, deal.getAmount());
     }
