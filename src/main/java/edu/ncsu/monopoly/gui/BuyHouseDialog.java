@@ -44,8 +44,8 @@ public class BuyHouseDialog extends JDialog {
 		return btn;
 	}
 
-	private JComboBox buildMonopolyComboBox() {
-		cboMonopoly = new JComboBox(player.getMonopolies());
+	private JComboBox<String> buildMonopolyComboBox() {
+		cboMonopoly = new JComboBox<>(player.getMonopolies());
 		return cboMonopoly;
 	}
 	

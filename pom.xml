@@ -16,6 +16,7 @@
 		<maven.compiler.target>11</maven.compiler.target>
 		<sonar.organization>kevinyovera</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.projectKey>Monopoly_CI</sonar.projectKey>
 		<sonar.login>f8408983d34b040e4bd16da81c1e7f400df4056f</sonar.login>
 	</properties>
 
