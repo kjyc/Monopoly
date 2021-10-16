@@ -221,7 +221,7 @@ public class GameMaster {
 
 	public void reset() {
 		for (int i = 0; i < getNumberOfPlayers(); i++) {
-			Player player = (Player) players.get(i);
+			Player player = players.get(i);
 			player.setPosition(gameBoard.getCell(0));
 		}
 		if (gameBoard != null)

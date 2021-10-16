@@ -50,9 +50,9 @@ public class MainWindow extends JFrame implements MonopolyGUI {
 		});
 	}
 
-	private void addCells(JPanel panel, List cells) {
+	private void addCells(JPanel panel, List<Cell> cells) {
 		for (int x = 0; x < cells.size(); x++) {
-			GUICell cell = new GUICell((Cell) cells.get(x));
+			GUICell cell = new GUICell(cells.get(x));
 			panel.add(cell);
 			guiCells.add(cell);
 		}
@@ -87,7 +87,7 @@ public class MainWindow extends JFrame implements MonopolyGUI {
 
 	public int[] getDiceRoll() {
 		TestDiceRollDialog dialog = new TestDiceRollDialog(this);
-		dialog.show();
+		dialog.setVisible(true);
 		return dialog.getDiceRoll();
 	}
 
@@ -122,13 +122,13 @@ public class MainWindow extends JFrame implements MonopolyGUI {
 	public RespondDialog openRespondDialog(TradeDeal deal) {
 		GUIRespondDialog dialog = new GUIRespondDialog();
 		dialog.setDeal(deal);
-		dialog.show();
+		dialog.setVisible(true);
 		return dialog;
 	}
 
 	public TradeDialog openTradeDialog() {
 		GUITradeDialog dialog = new GUITradeDialog(this);
-		dialog.show();
+		dialog.setVisible(true);
 		return dialog;
 	}
 
@@ -191,7 +191,7 @@ public class MainWindow extends JFrame implements MonopolyGUI {
 
 	public void showBuyHouseDialog(Player currentPlayer) {
 		BuyHouseDialog dialog = new BuyHouseDialog(currentPlayer);
-		dialog.show();
+		dialog.setVisible(true);
 	}
 
 	public void showMessage(String msg) {

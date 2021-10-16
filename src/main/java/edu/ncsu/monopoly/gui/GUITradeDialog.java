@@ -52,7 +52,7 @@ public class GUITradeDialog extends JDialog implements TradeDialog {
 
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GUITradeDialog.this.hide();
+				GUITradeDialog.this.setVisible(false);
 			}
 		});
 
@@ -84,7 +84,7 @@ public class GUITradeDialog extends JDialog implements TradeDialog {
 					deal.setPropertyName(cell.getName());
 					deal.setSellerIndex(GameMaster.instance().getPlayerIndex(player));
 				}
-				hide();
+				setVisible(false);
 			}
 		});
 
@@ -92,13 +92,13 @@ public class GUITradeDialog extends JDialog implements TradeDialog {
 	}
 
 	private void buildSellersCombo() {
-		List sellers = GameMaster.instance().getSellerList();
-		for (Iterator iter = sellers.iterator(); iter.hasNext();) {
-			Player player = (Player) iter.next();
+		List<Player> sellers = GameMaster.instance().getSellerList();
+		for (Iterator<Player> iter = sellers.iterator(); iter.hasNext();) {
+			Player player = iter.next();
 			cboSellers.addItem(player);
 		}
-		if (sellers.size() > 0) {
-			updatePropertiesCombo((Player) sellers.get(0));
+		if (!sellers.isEmpty()) {
+			updatePropertiesCombo(sellers.get(0));
 		}
 	}
 
